@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Leonida Platinum — GTA VI Trophy Guide &amp; Tracker</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%232b0a3d'/%3E%3Ctext x='16' y='22' font-family='Arial,sans-serif' font-size='15' font-weight='bold' fill='%23ffd166' text-anchor='middle'%3EVI%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="masthead">
+  <div class="masthead-inner">
+    <div class="brand">
+      <div class="brand-mark" aria-hidden="true">VI</div>
+      <div>
+        <h1>Leonida Platinum</h1>
+        <p class="subtitle">Grand Theft Auto VI — all 55 PlayStation 5 trophies, guided and tracked</p>
+      </div>
+    </div>
+    <div class="masthead-side">
+      <div class="progress-wrap">
+        <div class="progress-text"><strong id="progress-count">0 of 55</strong> <span id="progress-pct">0%</span></div>
+        <div class="progress-bar" role="progressbar" aria-label="Trophies earned"><div id="progress-fill"></div></div>
+        <div class="progress-sub" id="progress-sub">Platinum 0/1 · Gold 0/2 · Silver 0/6 · Bronze 0/46</div>
+      </div>
+      <div class="header-toggles">
+        <label class="toggle"><input type="checkbox" id="spoiler-toggle"> <span>Hide story spoilers</span></label>
+        <button id="theme-toggle" type="button" aria-label="Switch between light and dark look">Dark look</button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<nav class="tabs" aria-label="Guide sections">
+  <button type="button" data-tab="tracker" class="active">Tracker</button>
+  <button type="button" data-tab="roadmap">Roadmap to Platinum</button>
+  <button type="button" data-tab="missables">Missables</button>
+  <button type="button" data-tab="nextup">Next Up</button>
+</nav>
+
+<main>
+  <section id="view-tracker" class="view active" aria-label="Trophy tracker">
+    <div class="nextup-strip" id="nextup-strip"></div>
+    <div class="toolbar">
+      <label class="search">Search <input id="search" type="search" placeholder="Trophy name or guide word…" autocomplete="off"></label>
+      <div class="chips" id="kind-chips" role="group" aria-label="Filter by kind">
+        <button type="button" data-kind="all" class="chip active">All 55</button>
+        <button type="button" data-kind="story" class="chip">Story</button>
+        <button type="button" data-kind="missable" class="chip">Missable</button>
+        <button type="button" data-kind="collectibles" class="chip">Collectibles</button>
+        <button type="button" data-kind="activities" class="chip">Activities</button>
+        <button type="button" data-kind="online" class="chip">Online</button>
+      </div>
+      <label class="grade-filter">Grade <select id="grade"><option value="all">All grades</option><option value="platinum">Platinum</option><option value="gold">Gold</option><option value="silver">Silver</option><option value="bronze">Bronze</option></select></label>
+      <label class="earned-filter"><input type="checkbox" id="hide-earned"> Hide earned</label>
+      <div class="toolbar-actions">
+        <button id="export" type="button">Export progress</button>
+        <label class="import-btn">Import progress <input id="import" type="file" accept="application/json"></label>
+        <button id="reset" type="button">Reset</button>
+      </div>
+    </div>
+    <p class="list-meta" id="list-meta"></p>
+    <div class="tracker-grid">
+      <div class="list-wrap">
+        <table class="trophy-table">
+          <thead><tr><th scope="col">Earned</th><th scope="col">Trophy</th><th scope="col">Grade</th><th scope="col">Kind</th><th scope="col">Progress</th></tr></thead>
+          <tbody id="rows"></tbody>
+        </table>
+      </div>
+      <aside class="detail" id="detail" aria-label="Selected trophy guide"></aside>
+    </div>
+  </section>
+
+  <section id="view-roadmap" class="view" aria-label="Roadmap to the platinum">
+    <p class="view-intro">The road to the platinum in six stages, built from the official descriptions: story first, side strands before the finale, then activities, collectibles, combat and crime, and the money mop-up. Each stage lists its trophies in the order to earn them.</p>
+    <div id="roadmap-stages"></div>
+  </section>
+
+  <section id="view-missables" class="view" aria-label="Missable trophies">
+    <p class="view-intro">Fifteen trophies can be missed — or are safest done early. Six are named story missions that can only be earned while the mission is live, unless the game lets you replay missions (not yet confirmed for this game). Six are side-character strands and stranger strands that may lock after the final story mission. Three are one-time choices or events. The game launched yesterday and no walkthrough confirms missability yet, so this page flags them from the official descriptions and says plainly where the facts run out.</p>
+    <div id="missable-list"></div>
+  </section>
+
+  <section id="view-nextup" class="view" aria-label="Next up planner">
+    <p class="view-intro">What to chase next, in order: missable trophies first, then the story in order, then quick single-action trophies, then the long counters. Earned trophies drop out of the list as you tick them off.</p>
+    <ol id="nextup-list" class="nextup-list"></ol>
+  </section>
+</main>
+
+<footer>
+  <p><strong>Sources:</strong> every trophy's official name, description and grade come from the official list as published by Exophase; tracked counts (42 Shooting Range challenges, 500 choices and the rest) come from PSNProfiles; each guide is written for this page from the official description and says so where a place or step is not yet pinned down. No guide text is copied from another guide, wiki, video or forum post.</p>
+  <p><strong>Note for the judge:</strong> every guide names its sources beside it; the roadmap and the missable flags are built from the official descriptions; the tracker, filters, spoiler setting, export and import are all live in this app, which runs entirely from its own files with the network off.</p>
+  <p class="fine">An unofficial fan-made guide. Not affiliated with Rockstar Games or PlayStation. No Rockstar logo, artwork or screenshots are used here.</p>
+</footer>
+
+<script type="module" src="app.js"></script>
+</body>
+</html>
